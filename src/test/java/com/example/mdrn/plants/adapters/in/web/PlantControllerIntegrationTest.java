@@ -39,6 +39,17 @@ public class PlantControllerIntegrationTest {
         .perform(get("/plants/mature"))
         .andExpect(status().isOk())
         .andExpect(
-            content().string("Hello, plants!")); // Expect the response to be "Hello, plants!"
+            content()
+                .json(
+                    """
+                                                    [
+                                                      {
+                                                        "id": 1,
+                                                        "name": "Mature Rose",
+                                                        "species": "Rosa",
+                                                        "plantedDate":"2022-09-12",
+                                                        "mature":true}
+                                                    ]
+                            """));
   }
 }
