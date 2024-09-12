@@ -1,0 +1,5 @@
+services:
+  mdrn:
+    image: openjdk:22-jdk
+    ports:
+      - "8080:8080"
