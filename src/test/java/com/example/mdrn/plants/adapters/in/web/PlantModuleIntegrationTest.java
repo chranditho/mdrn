@@ -13,13 +13,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.modulith.test.ApplicationModuleTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-@SpringBootTest
+@ApplicationModuleTest
 @AutoConfigureMockMvc
-public class PlantControllerIntegrationTest {
+public class PlantModuleIntegrationTest {
 
   @Autowired private MockMvc mockMvc;
 
@@ -47,7 +47,7 @@ public class PlantControllerIntegrationTest {
                                                         "id": 1,
                                                         "name": "Mature Rose",
                                                         "species": "Rosa",
-                                                        "plantedDate":"2022-09-12",
+                                                        "plantedDate":"2022-09-13",
                                                         "mature":true}
                                                     ]
                             """));

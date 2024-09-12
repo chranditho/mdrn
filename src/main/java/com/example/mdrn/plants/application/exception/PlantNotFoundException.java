@@ -1,4 +1,4 @@
-package com.example.mdrn.plants.domain.model.domain;
+package com.example.mdrn.plants.application.exception;
 
 public class PlantNotFoundException extends RuntimeException {
   public PlantNotFoundException(Long plantId) {
