@@ -27,7 +27,7 @@ public class PlantModuleIntegrationTest {
 
   @BeforeEach
   void setUp() {
-    Plant maturePlant = new Plant(1L, "Mature Rose", "Rosa", LocalDate.now().minusYears(2));
+    Plant maturePlant = new Plant(1L, "Mature Rose", "Rosa", LocalDate.of(2022, 9, 13));
 
     List<Plant> maturePlants = List.of(maturePlant);
     given(plantRepository.findAll()).willReturn(maturePlants);
