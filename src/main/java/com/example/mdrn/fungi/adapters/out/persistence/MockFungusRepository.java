@@ -20,12 +20,12 @@ public class MockFungusRepository implements FungusRepository {
             "Amanita muscaria",
             "Fly agaric",
             LocalDate.of(1753, 1, 1),
-            new ToxicityLevel("Highly poisonous", true)),
+            ToxicityLevel.POISONOUS),
         new Fungus(
             randomUUID(),
             "Galerina marginata",
             "Funeral bell",
             LocalDate.of(1783, 1, 1),
-            new ToxicityLevel("Deadly poisonous", true)));
+            ToxicityLevel.POISONOUS));
   }
 }

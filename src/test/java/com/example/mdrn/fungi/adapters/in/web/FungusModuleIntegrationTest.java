@@ -35,7 +35,7 @@ class FungusModuleIntegrationTest {
             "Death Cap",
             "Amanita phalloides",
             LocalDate.of(2022, 9, 13),
-            new ToxicityLevel("Deadly poisonous", true));
+            ToxicityLevel.DEADLY);
 
     Fungus shiitake =
         new Fungus(
@@ -43,7 +43,7 @@ class FungusModuleIntegrationTest {
             "Shiitake",
             "Lentinula edodes",
             LocalDate.of(2021, 5, 20),
-            new ToxicityLevel("Non-toxic", false));
+            ToxicityLevel.EDIBLE);
 
     List<Fungus> allFungi = List.of(deathCap, shiitake);
     given(fungusRepository.findAll()).willReturn(allFungi);
@@ -58,18 +58,16 @@ class FungusModuleIntegrationTest {
             content()
                 .json(
                     """
-                                      [
-                                        {
-                                          "id": "123e4567-e89b-12d3-a456-426614174000",
-                                          "name": "Death Cap",
-                                          "species": "Amanita phalloides",
-                                          "discoveredDate": "2022-09-13",
-                                          "toxicityLevel": {
-                                            "toxicityDescription": "Deadly poisonous",
-                                            "poisonous": true
-                                          }
-                                        }
-                                      ]
-                                      """));
+                            [
+                              {
+                                "id": "123e4567-e89b-12d3-a456-426614174000",
+                                "name": "Death Cap",
+                                "species": "Amanita phalloides",
+                                "discoveredDate": "2022-09-13",
+                                "toxicityLevel": "DEADLY",
+                                "poisonous": true
+                              }
+                            ]
+                            """));
   }
 }
