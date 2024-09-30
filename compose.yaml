@@ -1,5 +1,5 @@
 services:
   mdrn:
-    image: openjdk:22-jdk
+    image: chranditho/mdrn-app
     ports:
-      - "8080:8080"
+      - "8090:8090"
