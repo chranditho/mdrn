@@ -6,11 +6,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.example.mdrn.fungi.domain.model.Fungus;
-import com.example.mdrn.fungi.domain.model.ToxicityLevel;
+import com.example.mdrn.fungi.domain.model.FungusMockFactory;
 import com.example.mdrn.fungi.ports.out.FungusRepository;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,21 +27,8 @@ class FungusModuleIntegrationTest {
 
   @BeforeEach
   void setUp() {
-    Fungus deathCap =
-        new Fungus(
-            UUID.fromString("123e4567-e89b-12d3-a456-426614174000"),
-            "Death Cap",
-            "Amanita phalloides",
-            LocalDate.of(2022, 9, 13),
-            ToxicityLevel.DEADLY);
-
-    Fungus shiitake =
-        new Fungus(
-            UUID.fromString("223e4567-e89b-12d3-a456-426614174001"),
-            "Shiitake",
-            "Lentinula edodes",
-            LocalDate.of(2021, 5, 20),
-            ToxicityLevel.EDIBLE);
+    Fungus deathCap = FungusMockFactory.createDeathCap();
+    Fungus shiitake = FungusMockFactory.createShiitake();
 
     List<Fungus> allFungi = List.of(deathCap, shiitake);
     given(fungusRepository.findAll()).willReturn(allFungi);

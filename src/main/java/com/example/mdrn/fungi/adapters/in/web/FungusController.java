@@ -1,6 +1,5 @@
 package com.example.mdrn.fungi.adapters.in.web;
 
-import com.example.mdrn.fungi.domain.model.Fungus;
 import com.example.mdrn.fungi.ports.in.FungusPort;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class FungusController {
 
   private final FungusPort fungusPort;
+  private final FungusMapper fungusMapper;
 
-  public FungusController(FungusPort fungusPort) {
+  public FungusController(FungusPort fungusPort, FungusMapper fungusMapper) {
     this.fungusPort = fungusPort;
+    this.fungusMapper = fungusMapper;
   }
 
   @GetMapping("/poisonous")
-  public ResponseEntity<List<Fungus>> getAllPoisonousFungi() {
-    return ResponseEntity.ok(fungusPort.getAllPoisonousFungi());
+  ResponseEntity<List<FungusDto>> getAllPoisonousFungi() {
+    return ResponseEntity.ok(
+        fungusPort.getAllPoisonousFungi().stream().map(fungusMapper::fungusToFungusDto).toList());
   }
 }
