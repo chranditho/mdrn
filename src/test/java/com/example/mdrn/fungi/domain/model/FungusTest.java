@@ -14,16 +14,17 @@ class FungusTest {
     "Death Cap, Amanita phalloides, DEADLY",
     "Destroying Angel, Amanita virosa, POISONOUS"
   })
-  void shouldBePoisonousIfToxicityLevelIsPoisonousOrDeadly(String name, String species, ToxicityLevel toxicityLevel) {
-    Fungus fungus =
+  void shouldBePoisonousIfToxicityLevelIsPoisonousOrDeadly(
+      String name, String species, ToxicityLevel toxicityLevel) {
+    Fungus toxicFungus =
         new Fungus(
             null,
-            new Name(name),
-            new Species(species),
-            new DiscoveredDate(LocalDate.now()),
+            Name.create(name).getValue(),
+            Species.create(species).getValue(),
+            DiscoveredDate.create(LocalDate.now()).getValue(),
             toxicityLevel);
 
-    assertTrue(fungus.isPoisonous());
+    assertTrue(toxicFungus.isPoisonous());
   }
 
   @Test
@@ -31,9 +32,9 @@ class FungusTest {
     Fungus edibleFungus =
         new Fungus(
             null,
-            new Name("Shiitake"),
-            new Species("Lentinula edodes"),
-            new DiscoveredDate(LocalDate.now()),
+            Name.create("Shiitake").getValue(),
+            Species.create("Lentinula edodes").getValue(),
+            DiscoveredDate.create(LocalDate.now()).getValue(),
             ToxicityLevel.EDIBLE);
 
     assertFalse(edibleFungus.isPoisonous());
