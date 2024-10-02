@@ -9,6 +9,8 @@ import com.example.mdrn.plants.domain.model.Plant;
 import com.example.mdrn.plants.ports.out.PlantRepository;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,12 @@ public class PlantModuleIntegrationTest {
 
   @BeforeEach
   void setUp() {
-    Plant maturePlant = new Plant(1L, "Mature Rose", "Rosa", LocalDate.of(2022, 9, 13));
+    Plant maturePlant =
+        new Plant(
+            UUID.fromString("07b5c71b-f97e-4a6a-a214-40c2615998da"),
+            "Mature Rose",
+            "Rosa",
+            LocalDate.of(2022, 9, 13));
 
     List<Plant> maturePlants = List.of(maturePlant);
     given(plantRepository.findAll()).willReturn(maturePlants);
@@ -44,7 +51,7 @@ public class PlantModuleIntegrationTest {
                     """
                                                     [
                                                       {
-                                                        "id": 1,
+                                                        "id": "07b5c71b-f97e-4a6a-a214-40c2615998da",
                                                         "name": "Mature Rose",
                                                         "species": "Rosa",
                                                         "plantedDate":"2022-09-13",
