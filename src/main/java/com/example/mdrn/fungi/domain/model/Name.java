@@ -5,7 +5,8 @@ public record Name(String value) {
 
   public Name {
     if (value == null || value.isEmpty() || value.length() > MAX_LENGTH) {
-      throw new IllegalArgumentException("Name must be between 1 and 256 characters.");
+      throw new IllegalArgumentException(
+          "Species must be between 1 and %d characters.".formatted(MAX_LENGTH));
     }
   }
 
