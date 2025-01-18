@@ -10,7 +10,6 @@ import com.example.mdrn.plants.ports.out.PlantRepository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +34,14 @@ public class PlantModuleIntegrationTest {
             "Mature Rose",
             "Rosa",
             LocalDate.of(2022, 9, 13));
-
-    List<Plant> maturePlants = List.of(maturePlant);
-    given(plantRepository.findAll()).willReturn(maturePlants);
+    Plant immaturePlant =
+        new Plant(
+            UUID.fromString("07b5c71b-f97e-4a6a-a214-40c2615998db"),
+            "Immature Rose",
+            "Rosa",
+            LocalDate.now());
+    List<Plant> plants = List.of(maturePlant, immaturePlant);
+    given(plantRepository.findAll()).willReturn(plants);
   }
 
   @Test
@@ -58,5 +62,28 @@ public class PlantModuleIntegrationTest {
                                                         "mature":true}
                                                     ]
                             """));
+  }
+
+  @Test
+  void getAllMaturePlants_returnsEmptyListWhenAllPlantsAreImmature() throws Exception {
+    Plant immaturePlant1 =
+        new Plant(
+            UUID.fromString("07b5c71b-f97e-4a6a-a214-40c2615998dc"),
+            "Immature Rose 1",
+            "Rosa",
+            LocalDate.now());
+    Plant immaturePlant2 =
+        new Plant(
+            UUID.fromString("07b5c71b-f97e-4a6a-a214-40c2615998dd"),
+            "Immature Rose 2",
+            "Rosa",
+            LocalDate.now());
+    List<Plant> plants = List.of(immaturePlant1, immaturePlant2);
+    given(plantRepository.findAll()).willReturn(plants);
+
+    mockMvc
+        .perform(get("/plants/mature"))
+        .andExpect(status().isOk())
+        .andExpect(content().json("[]"));
   }
 }
