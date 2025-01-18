@@ -15,6 +15,13 @@ class PlantTest {
   }
 
   @Test
+  void shouldBeImmatureIfPlantAgeIsExactlyOneYear() {
+    LocalDate exactlyOneYear = LocalDate.now().minusYears(1);
+    Plant plant = new Plant(null, "", "", exactlyOneYear);
+    assertFalse(plant.isMature());
+  }
+
+  @Test
   void shouldBeMatureIfPlantAgeIsMoreThanOneYear() {
     LocalDate moreThanOneYear = LocalDate.now().minusYears(1).minusDays(1);
     Plant plant = new Plant(null, "", "", moreThanOneYear);
