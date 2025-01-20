@@ -19,6 +19,6 @@ public record Animal(
   }
 
   public String scientificName() {
-    return this.genus + " " + this.species;
+    return "%s %s".formatted(this.genus, this.species);
   }
 }
