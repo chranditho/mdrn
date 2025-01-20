@@ -12,25 +12,37 @@ import org.junit.jupiter.api.Test;
 @RequiredArgsConstructor
 class AnimalTest {
 
-    private Animal panthera;
+  private Animal panthera;
 
-    @BeforeEach
-    void setUp() {
-        panthera = new Animal(UUID.fromString("192368ba-a293-4569-82d1-7df7b741a65b"), "Lion", "Panthera", "Panthera leo", Diet.CARNIVORE, LocalDate.of(2021, 9, 13));
-      }
+  @BeforeEach
+  void setUp() {
+    panthera =
+        new Animal(
+            UUID.fromString("192368ba-a293-4569-82d1-7df7b741a65b"),
+            "Lion",
+            "Panthera",
+            "Leo",
+            Diet.CARNIVORE,
+            LocalDate.of(2021, 9, 13));
+  }
 
-    @Test
-    void isCarnivorous() {
-        assertTrue(panthera.isCarnivorous());
-      }
+  @Test
+  void isCarnivorous() {
+    assertTrue(panthera.isCarnivorous());
+  }
 
-    @Test
-    void isHerbivorous() {
-        assertFalse(panthera.isHerbivorous());
-      }
+  @Test
+  void isHerbivorous() {
+    assertFalse(panthera.isHerbivorous());
+  }
 
-    @Test
-    void isOmnivorous() {
-        assertFalse(panthera.isOmnivorous());
-      }
+  @Test
+  void isOmnivorous() {
+    assertFalse(panthera.isOmnivorous());
+  }
+
+  @Test
+  void hasCorrectScientificName() {
+    assert (panthera.scientificName()).equals("Panthera Leo");
+  }
 }

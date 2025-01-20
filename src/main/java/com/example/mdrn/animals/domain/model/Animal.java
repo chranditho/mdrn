@@ -17,4 +17,8 @@ public record Animal(
   public boolean isOmnivorous() {
     return Diet.OMNIVORE.equals(this.diet);
   }
+
+  public String scientificName() {
+    return this.genus + " " + this.species;
+  }
 }
