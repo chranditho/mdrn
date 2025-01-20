@@ -1,4 +1,4 @@
-package com.example.mdrn.animals.apapters.in;
+package com.example.mdrn.animals.adapters.in;
 
 import static com.example.mdrn.animals.domain.model.Diet.CARNIVORE;
 import static com.example.mdrn.animals.domain.model.Diet.HERBIVORE;
@@ -88,7 +88,6 @@ class AnimalIntegrationTest {
                             "name":"Lion",
                             "genus":"genus",
                             "species":"species",
-                            "diet":"CARNIVORE",
                             "discoveredDate":"2021-09-13"
                             }
                             ]
