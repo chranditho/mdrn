@@ -18,4 +18,3 @@ public record Animal(
     return Diet.OMNIVORE.equals(this.diet);
   }
 }
-

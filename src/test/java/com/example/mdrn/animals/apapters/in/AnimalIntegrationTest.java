@@ -1,5 +1,6 @@
 package com.example.mdrn.animals.apapters.in;
 
+import static com.example.mdrn.animals.domain.model.Diet.CARNIVORE;
 import static com.example.mdrn.animals.domain.model.Diet.HERBIVORE;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -37,14 +38,23 @@ class AnimalIntegrationTest {
             "species",
             HERBIVORE,
             LocalDate.of(2021, 9, 13));
-    List<Animal> animals = List.of(herbivor);
+
+    Animal carnivore =
+        new Animal(
+            UUID.fromString("aab176a4-ef26-4bfa-ab14-5bef5ddbb372"),
+            "Lion",
+            "genus",
+            "species",
+            CARNIVORE,
+            LocalDate.of(2021, 9, 13));
+    List<Animal> animals = List.of(herbivor, carnivore);
     given(animalRepository.findAll()).willReturn(animals);
   }
 
   @Test
   void getAllHerbivores() throws Exception {
     mockMvc
-        .perform(get("/animals/herbivores"))
+        .perform(get("/herbivores"))
         .andExpect(status().isOk())
         .andExpect(
             content()
@@ -57,6 +67,28 @@ class AnimalIntegrationTest {
                             "genus":"genus",
                             "species":"species",
                             "diet":"HERBIVORE",
+                            "discoveredDate":"2021-09-13"
+                            }
+                            ]
+                            """));
+  }
+
+  @Test
+  void getAllCarnivores() throws Exception {
+    mockMvc
+        .perform(get("/carnivores"))
+        .andExpect(status().isOk())
+        .andExpect(
+            content()
+                .json(
+                    """
+                            [
+                            {
+                            "id": "aab176a4-ef26-4bfa-ab14-5bef5ddbb372",
+                            "name":"Lion",
+                            "genus":"genus",
+                            "species":"species",
+                            "diet":"CARNIVORE",
                             "discoveredDate":"2021-09-13"
                             }
                             ]
