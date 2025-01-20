@@ -1,4 +1,4 @@
-package com.example.mdrn.application;
+package com.example.mdrn.animals.application;
 
 import com.example.mdrn.animals.domain.model.Animal;
 import com.example.mdrn.animals.ports.in.AnimalPort;

@@ -1,4 +1,4 @@
-package com.example.mdrn.animals.adpaters.out;
+package com.example.mdrn.animals.adapters.out;
 
 import static com.example.mdrn.animals.domain.model.AnimalMockFactory.*;
 

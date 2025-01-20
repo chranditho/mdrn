@@ -19,8 +19,3 @@ public record Animal(
   }
 }
 
-enum Diet {
-  HERBIVORE,
-  CARNIVORE,
-  OMNIVORE
-}
