@@ -1,6 +1,6 @@
 package com.example.mdrn.animals.publishers;
 
-import com.example.mdrn.shared.events.DeceasedEvent;
+import com.example.mdrn.shared.DeceasedEvent;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;

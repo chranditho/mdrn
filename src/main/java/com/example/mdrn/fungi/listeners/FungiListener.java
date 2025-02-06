@@ -1,6 +1,6 @@
 package com.example.mdrn.fungi.listeners;
 
-import com.example.mdrn.shared.events.DeceasedEvent;
+import com.example.mdrn.shared.DeceasedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
