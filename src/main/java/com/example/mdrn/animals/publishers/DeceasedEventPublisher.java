@@ -1,6 +1,6 @@
-package com.example.mdrn.shared.publishers;
+package com.example.mdrn.animals.publishers;
 
-import com.example.mdrn.shared.events.DiseasedEvent;
+import com.example.mdrn.shared.events.DeceasedEvent;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
@@ -11,11 +11,11 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class DiseasedEventPublisher {
+public class DeceasedEventPublisher {
     private final @NonNull ApplicationEventPublisher events;
 
     @Transactional
     public void unalife() {
-    events.publishEvent(new DiseasedEvent(UUID.randomUUID()));
+    events.publishEvent(new DeceasedEvent(UUID.randomUUID()));
     }
 }
