@@ -1,7 +1,7 @@
 package com.example.mdrn.plants.adapters.in.web;
 
 import com.example.mdrn.plants.domain.model.Plant;
-import com.example.mdrn.plants.ports.in.PlantPort;
+import com.example.mdrn.plants.domain.ports.in.PlantPort;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

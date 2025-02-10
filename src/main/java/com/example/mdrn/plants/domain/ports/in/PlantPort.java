@@ -1,4 +1,4 @@
-package com.example.mdrn.plants.ports.in;
+package com.example.mdrn.plants.domain.ports.in;
 
 import com.example.mdrn.plants.domain.model.Plant;
 import java.util.List;

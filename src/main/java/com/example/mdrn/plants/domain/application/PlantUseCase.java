@@ -1,8 +1,8 @@
-package com.example.mdrn.plants.application;
+package com.example.mdrn.plants.domain.application;
 
 import com.example.mdrn.plants.domain.model.Plant;
-import com.example.mdrn.plants.ports.in.PlantPort;
-import com.example.mdrn.plants.ports.out.PlantRepository;
+import com.example.mdrn.plants.domain.ports.in.PlantPort;
+import com.example.mdrn.plants.domain.ports.out.PlantRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
 

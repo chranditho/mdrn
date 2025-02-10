@@ -1,4 +1,4 @@
-package com.example.mdrn.plants.application.exception;
+package com.example.mdrn.plants.domain.application.exception;
 
 import java.util.UUID;
 

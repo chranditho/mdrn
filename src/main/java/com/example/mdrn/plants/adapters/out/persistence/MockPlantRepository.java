@@ -1,7 +1,7 @@
 package com.example.mdrn.plants.adapters.out.persistence;
 
 import com.example.mdrn.plants.domain.model.Plant;
-import com.example.mdrn.plants.ports.out.PlantRepository;
+import com.example.mdrn.plants.domain.ports.out.PlantRepository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
