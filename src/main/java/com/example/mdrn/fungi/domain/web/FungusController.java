@@ -1,6 +1,6 @@
 package com.example.mdrn.fungi.domain.web;
 
-import com.example.mdrn.fungi.domain.ports.in.in.FungusPort;
+import com.example.mdrn.fungi.domain.ports.in.FungusPort;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

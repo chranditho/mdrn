@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.example.mdrn.fungi.domain.model.Fungus;
 import com.example.mdrn.fungi.domain.model.FungusMockFactory;
-import com.example.mdrn.fungi.domain.ports.in.out.FungusRepository;
+import com.example.mdrn.fungi.domain.ports.out.FungusRepository;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
