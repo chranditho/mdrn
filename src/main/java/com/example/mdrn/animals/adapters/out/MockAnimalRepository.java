@@ -3,7 +3,7 @@ package com.example.mdrn.animals.adapters.out;
 import static com.example.mdrn.animals.domain.model.AnimalMockFactory.*;
 
 import com.example.mdrn.animals.domain.model.Animal;
-import com.example.mdrn.animals.ports.out.AnimalRepository;
+import com.example.mdrn.animals.domain.ports.out.AnimalRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -8,7 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.example.mdrn.animals.domain.model.Animal;
-import com.example.mdrn.animals.ports.out.AnimalRepository;
+import com.example.mdrn.animals.domain.ports.out.AnimalRepository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;

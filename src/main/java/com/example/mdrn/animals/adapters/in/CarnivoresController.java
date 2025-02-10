@@ -1,10 +1,10 @@
 package com.example.mdrn.animals.adapters.in;
 
-import com.example.mdrn.animals.application.CarnivoresUseCase;
+import com.example.mdrn.animals.domain.application.CarnivoresUseCase;
 import com.example.mdrn.animals.domain.model.Animal;
 import java.util.List;
 
-import com.example.mdrn.animals.publishers.DeceasedEventPublisher;
+import com.example.mdrn.animals.adapters.out.DeceasedEventPublisher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
