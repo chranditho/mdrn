@@ -1,4 +1,4 @@
-package com.example.mdrn.fungi.listeners;
+package com.example.mdrn.fungi.adapters.in.listeners;
 
 import com.example.mdrn.shared.DeceasedEvent;
 import org.springframework.context.event.EventListener;

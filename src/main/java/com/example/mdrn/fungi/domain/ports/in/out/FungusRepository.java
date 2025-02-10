@@ -1,4 +1,4 @@
-package com.example.mdrn.fungi.ports.out;
+package com.example.mdrn.fungi.domain.ports.in.out;
 
 import com.example.mdrn.fungi.domain.model.Fungus;
 import java.util.List;

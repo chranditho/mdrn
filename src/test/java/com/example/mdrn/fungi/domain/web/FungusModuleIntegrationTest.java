@@ -1,4 +1,4 @@
-package com.example.mdrn.fungi.adapters.in.web;
+package com.example.mdrn.fungi.domain.web;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.example.mdrn.fungi.domain.model.Fungus;
 import com.example.mdrn.fungi.domain.model.FungusMockFactory;
-import com.example.mdrn.fungi.ports.out.FungusRepository;
+import com.example.mdrn.fungi.domain.ports.in.out.FungusRepository;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

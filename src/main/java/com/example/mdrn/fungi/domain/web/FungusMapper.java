@@ -1,4 +1,4 @@
-package com.example.mdrn.fungi.adapters.in.web;
+package com.example.mdrn.fungi.domain.web;
 
 import com.example.mdrn.fungi.domain.model.Fungus;
 import org.mapstruct.Mapper;

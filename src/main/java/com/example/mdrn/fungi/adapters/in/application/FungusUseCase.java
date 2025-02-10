@@ -1,8 +1,8 @@
-package com.example.mdrn.fungi.application;
+package com.example.mdrn.fungi.adapters.in.application;
 
 import com.example.mdrn.fungi.domain.model.Fungus;
-import com.example.mdrn.fungi.ports.in.FungusPort;
-import com.example.mdrn.fungi.ports.out.FungusRepository;
+import com.example.mdrn.fungi.domain.ports.in.in.FungusPort;
+import com.example.mdrn.fungi.domain.ports.in.out.FungusRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -4,7 +4,7 @@ import static com.example.mdrn.fungi.domain.model.FungusMockFactory.createDeathC
 import static com.example.mdrn.fungi.domain.model.FungusMockFactory.createShiitake;
 
 import com.example.mdrn.fungi.domain.model.Fungus;
-import com.example.mdrn.fungi.ports.out.FungusRepository;
+import com.example.mdrn.fungi.domain.ports.in.out.FungusRepository;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
