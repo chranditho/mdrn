@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mdrn-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mdrn
+  template:
+    metadata:
+      labels:
+        app: mdrn
+    spec:
+      containers:
+        - name: mdrn
+          image: mdrn:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
